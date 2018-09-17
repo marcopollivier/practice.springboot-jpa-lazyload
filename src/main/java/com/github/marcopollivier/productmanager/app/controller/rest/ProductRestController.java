@@ -1,7 +1,7 @@
-package com.github.marcopollivier.avenuecode.productmanager.app.controller.rest;
+package com.github.marcopollivier.productmanager.app.controller.rest;
 
-import com.github.marcopollivier.avenuecode.productmanager.app.domain.model.Product;
-import com.github.marcopollivier.avenuecode.productmanager.app.service.ProductService;
+import com.github.marcopollivier.productmanager.app.domain.model.Product;
+import com.github.marcopollivier.productmanager.app.service.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

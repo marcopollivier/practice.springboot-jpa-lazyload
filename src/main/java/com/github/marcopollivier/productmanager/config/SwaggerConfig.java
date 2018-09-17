@@ -1,8 +1,6 @@
-package com.github.marcopollivier.avenuecode.productmanager.config;
+package com.github.marcopollivier.productmanager.config;
 
-import com.github.marcopollivier.avenuecode.productmanager.app.controller.rest.ProductRestController;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -20,7 +18,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .paths(PathSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("com.github.marcopollivier.avenuecode.productmanager.app.controller.rest"))
+                .apis(RequestHandlerSelectors.basePackage("com.github.marcopollivier.productmanager.app.controller.rest"))
                 .build();
     }
 

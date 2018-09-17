@@ -1,6 +1,6 @@
-package com.github.marcopollivier.avenuecode.productmanager.app.domain.repository;
+package com.github.marcopollivier.productmanager.app.domain.repository;
 
-import com.github.marcopollivier.avenuecode.productmanager.app.domain.model.Product;
+import com.github.marcopollivier.productmanager.app.domain.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

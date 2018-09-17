@@ -1,8 +1,8 @@
-package com.github.marcopollivier.avenuecode.productmanager;
+package com.github.marcopollivier.productmanager;
 
-import com.github.marcopollivier.avenuecode.productmanager.app.domain.model.Image;
-import com.github.marcopollivier.avenuecode.productmanager.app.domain.model.Product;
-import com.github.marcopollivier.avenuecode.productmanager.app.service.ProductService;
+import com.github.marcopollivier.productmanager.app.domain.model.Image;
+import com.github.marcopollivier.productmanager.app.domain.model.Product;
+import com.github.marcopollivier.productmanager.app.service.ProductService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -16,7 +16,7 @@ import java.util.Set;
 
 @SpringBootApplication
 @EntityScan(basePackageClasses = {Application.class, Jsr310JpaConverters.class})
-@ComponentScan(basePackages = {"com.github.marcopollivier.avenuecode.productmanager.app"})
+@ComponentScan(basePackages = {"com.github.marcopollivier.productmanager.app"})
 @EnableSwagger2
 public class Application {
 

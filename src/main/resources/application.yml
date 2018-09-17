@@ -1,4 +1,4 @@
-project.name: product-manager
+project.name: springboot-jpa-lazyload
 
 spring:
   #Application

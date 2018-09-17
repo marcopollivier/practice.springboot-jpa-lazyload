@@ -1,4 +1,4 @@
-package com.github.marcopollivier.avenuecode.productmanager.app.domain.model;
+package com.github.marcopollivier.productmanager.app.domain.model;
 
 import javax.persistence.*;
 

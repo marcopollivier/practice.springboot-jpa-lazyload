@@ -1,7 +1,7 @@
-package com.github.marcopollivier.avenuecode.productmanager.app.service;
+package com.github.marcopollivier.productmanager.app.service;
 
-import com.github.marcopollivier.avenuecode.productmanager.app.domain.model.Product;
-import com.github.marcopollivier.avenuecode.productmanager.app.domain.repository.ProductRepository;
+import com.github.marcopollivier.productmanager.app.domain.model.Product;
+import com.github.marcopollivier.productmanager.app.domain.repository.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
