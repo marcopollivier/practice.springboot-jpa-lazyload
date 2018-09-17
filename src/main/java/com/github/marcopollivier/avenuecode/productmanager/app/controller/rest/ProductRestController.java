@@ -1,7 +1,5 @@
 package com.github.marcopollivier.avenuecode.productmanager.app.controller.rest;
 
-import com.github.marcopollivier.avenuecode.productmanager.app.controller.adapter.ProductAdapter;
-import com.github.marcopollivier.avenuecode.productmanager.app.controller.dto.ProductDTO;
 import com.github.marcopollivier.avenuecode.productmanager.app.domain.model.Product;
 import com.github.marcopollivier.avenuecode.productmanager.app.service.ProductService;
 import io.swagger.annotations.Api;
@@ -28,26 +26,22 @@ public class ProductRestController {
 
     @ApiOperation(value = "Retrieve a specific Single Products", notes = "Get a specific product excluding relationships ")
     @RequestMapping(method = RequestMethod.GET, value = "{productId}", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<ProductDTO> requestSpecificSingleProduct(@PathVariable("productId") long productId) {
+    public ResponseEntity<Product> requestSpecificSingleProduct(@PathVariable("productId") long productId) {
 
         Product product = productService.retrieveProduct(productId);
 
-        ProductAdapter adapter = new ProductAdapter(product);
-        ProductDTO productDTO = adapter.convertToDTO();
 
-        return new ResponseEntity<>(productDTO, HttpStatus.OK);
+        return new ResponseEntity<>(product, HttpStatus.OK);
     }
 
     @ApiOperation(value = "Retrieve All Complete Products", notes = "Get all products including all relationships.")
     @RequestMapping(method = RequestMethod.GET, value = "/complete", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<ProductDTO>> requestAllCompleteProduct() {
+    public ResponseEntity<List<Product>> requestAllCompleteProduct() {
 
         List<Product> products = productService.retrieveProducts();
 
-        ProductAdapter adapter = new ProductAdapter(products);
-        List<ProductDTO> productDTOS = adapter.fromEntityList();
+        return new ResponseEntity<>(products, HttpStatus.OK);
 
-        return new ResponseEntity<>(productDTOS, HttpStatus.OK);
     }
 
 }

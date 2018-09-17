@@ -11,6 +11,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @SpringBootApplication
 @EntityScan(basePackageClasses = {Application.class, Jsr310JpaConverters.class})
 @ComponentScan(basePackages = {"com.github.marcopollivier.avenuecode.productmanager.app"})
@@ -23,10 +26,14 @@ public class Application {
 		Image img = new Image();
 		img.setType("img.jpg");
 
+		Set<Image> images = new HashSet<>();
+		images.add(img);
+
 		Product product = new Product();
 		product.setName("Caderno");
 		product.setDescription("Caderno pautado");
 		product.addImage(img);
+
 
 		context.getBean(ProductService.class).saveOrUpdate(product);
 	}
