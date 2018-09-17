@@ -30,7 +30,6 @@ public class ProductRestController {
 
         Product product = productService.retrieveProduct(productId);
 
-
         return new ResponseEntity<>(product, HttpStatus.OK);
     }
 
