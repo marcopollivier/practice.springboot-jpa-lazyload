@@ -34,4 +34,4 @@ server:
     accesslog:
       pattern: common
       enabled: true
-      directory: /logdir
+      directory: /app/logdir
