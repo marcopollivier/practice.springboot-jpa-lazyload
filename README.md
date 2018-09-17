@@ -1,2 +1,2 @@
-# Product Manager - SpringBoot REST PoC
-
+# springboot-jpa-lazyload
+Simulating Springboot-JPA lazy load problem

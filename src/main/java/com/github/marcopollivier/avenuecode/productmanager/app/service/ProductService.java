@@ -1,6 +1,5 @@
 package com.github.marcopollivier.avenuecode.productmanager.app.service;
 
-import com.github.marcopollivier.avenuecode.productmanager.app.controller.ProductRetrieveType;
 import com.github.marcopollivier.avenuecode.productmanager.app.domain.model.Product;
 import com.github.marcopollivier.avenuecode.productmanager.app.domain.repository.ProductRepository;
 import org.slf4j.Logger;
@@ -27,13 +26,13 @@ public class ProductService {
     }
 
     public List<Product> retrieveProducts() {
-        List<Product> allByParentProductIsNull = productRepository.findAllByParentProductIsNull();
+        List<Product> allByParentProductIsNull = productRepository.findAllProducts();
 
         return allByParentProductIsNull;
     }
 
     public Product retrieveProduct(Long productId) {
-        Optional<Product> findById = productRepository.findByIdAndParentProductIsNull(productId);
+        Optional<Product> findById = productRepository.findAllById(productId);
 
         if (!findById.isPresent()) {
             return null;

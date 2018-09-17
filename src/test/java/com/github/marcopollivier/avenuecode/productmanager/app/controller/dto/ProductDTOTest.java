@@ -28,7 +28,6 @@ public class ProductDTOTest {
         Assert.assertEquals("Target nonon onono nono", product.getDescription());
 
         Assert.assertEquals(3, product.getImages().size());
-        Assert.assertEquals(2, product.getSubProducts().size());
     }
 
     private ProductDTO buildTargetProduct() {

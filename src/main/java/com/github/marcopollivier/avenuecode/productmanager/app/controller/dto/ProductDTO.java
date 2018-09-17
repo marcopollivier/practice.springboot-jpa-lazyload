@@ -97,8 +97,6 @@ public class ProductDTO {
         entity.setName(this.name);
         entity.setDescription(this.description);
 
-        subProducts.forEach(dto -> entity.addSubProduct(dto.toEntity()));
-
         images.forEach(dto -> entity.addImage(dto.toEntity()));
 
         return entity;

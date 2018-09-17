@@ -11,12 +11,10 @@ import java.util.Optional;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    @Query("select p from Product p where p.parentProduct is null")
-    List<Product> findAllByParentProductIsNull();
+    @Query("select p from Product p")
+    List<Product> findAllProducts();
 
-    @Query("select p from Product p where p.parentProduct is null and p.id = ?1")
-    Optional<Product> findByIdAndParentProductIsNull(Long productId);
-
-    List<Product> findByParentProductId(Long parentProductId);
+    @Query("select p from Product p where p.id = ?1")
+    Optional<Product> findAllById(Long productId);
 
 }

@@ -13,11 +13,6 @@ public class ProductAdapter {
     private Product product;
     private List<Product> products;
 
-
-    public ProductAdapter(ProductDTO productDTO) {
-        this.productDTO = productDTO;
-    }
-
     public ProductAdapter(Product product) {
         this.product = product;
     }
@@ -26,13 +21,6 @@ public class ProductAdapter {
         this.products = products;
     }
 
-    public Product convertToEntity() {
-        if(productDTO == null) {
-            return null;
-        }
-
-        return productDTO.toEntity();
-    }
 
     public ProductDTO convertToDTO() {
         if(product == null) {
@@ -59,10 +47,6 @@ public class ProductAdapter {
         dto.setId(product.getId());
         dto.setName(product.getName());
         dto.setDescription(product.getDescription());
-
-        if(product.getSubProducts() != null) {
-            product.getSubProducts().forEach(subProduct -> dto.addSubProductDTO(fromEntity(subProduct)));
-        }
 
         if(product.getImages() != null) {
             product.getImages().forEach(imageEntity -> dto.addImageDTO(new ImageDTO(imageEntity.getId(), imageEntity.getType())));
